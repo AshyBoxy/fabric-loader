@@ -91,7 +91,7 @@ public final class MappingConfiguration {
 	}
 
 	public String getTargetNamespace() {
-		return FabricLauncherBase.getLauncher().isDevelopment() ? "named" : "intermediary";
+		return FabricLauncherBase.getLauncher().isDevelopment() || Boolean.parseBoolean(System.getProperty(SystemProperties.CRIMES, "false")) ? "named" : "intermediary";
 	}
 
 	public boolean requiresPackageAccessHack() {
